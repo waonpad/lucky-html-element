@@ -3,7 +3,6 @@ import { ContentContainer } from "@/components/elements/content-container";
 import { ContentTitle } from "@/components/elements/content-title";
 import { ElementInfo } from "@/components/elements/element-info";
 import { PageContainer } from "@/components/layouts/page-container";
-import { htmlElements } from "@/config/html-elements/html-elements";
 import { findByElementName } from "@/config/html-elements/utils";
 import { toPascalCase } from "@/utils";
 import type { Metadata } from "next";
@@ -19,8 +18,10 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default async function Page() {
-  const elementNames = htmlElements.map((element) => element.name);
-  const elementName = elementNames[Math.floor(Math.random() * elementNames.length)];
+  // const elementNames = htmlElements.map((element) => element.name);
+  // const elementName = elementNames[Math.floor(Math.random() * elementNames.length)];
+
+  const elementName = "a";
 
   const elementInfo = findByElementName(elementName);
 

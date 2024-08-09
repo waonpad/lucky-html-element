@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { luckMessages } from "@/config/html-elements/luck-messages";
 import type { ElementInfo } from "@/types";
 import { toPascalCase } from "@/utils";
 
@@ -14,6 +15,9 @@ const pagesDir = path.resolve(__dirname, "../src/app/(frontend)");
 
 // コンポーネントを作るディレクトリのベースパス
 const componentsDir = path.resolve(__dirname, "../src/components/elements/html-elements");
+
+// ラッキーアイテムメッセージを作るファイルパス
+const luckOutputPath = path.resolve(__dirname, "../src/config/html-elements/luck-messages.ts");
 
 const main = async () => {
   // JSONファイルを読み込む
@@ -34,6 +38,51 @@ export const htmlElements = ${JSON.stringify(elements, null, 2)} as const satisf
 
   // ファイルを作成
   fs.writeFileSync(tsOutputPath, tsContent);
+
+  // 対象のキーがから文字でない場合は、そのままスキップする
+  const prevLuckContent = luckMessages;
+
+  // 全てのキーに対して、そのキーの値がから文字でない場合は、そのままスキップする
+  // キーがなければから文字を入れる
+  const keys = elements.map((element) => element.name);
+
+  for (const key of keys) {
+    if (!(key in prevLuckContent)) {
+      // @ts-ignore
+      prevLuckContent[key] = "";
+    }
+  }
+
+  // ebc順でオブジェクトのキーをソート
+  const sortedKeys = Object.keys(prevLuckContent).sort();
+
+  // ソートしたキーを元にオブジェクトを作成
+  const sortedLuckContent: Record<string, string> = {};
+
+  for (const key of sortedKeys) {
+    // @ts-ignore
+    sortedLuckContent[key] = prevLuckContent[key];
+  }
+
+  // ラッキーアイテムメッセージを作成
+  const luckContent = `
+import type { htmlElements } from "./html-elements";
+
+export const luckMessages = ${JSON.stringify(sortedLuckContent, null, 2)} as const satisfies Record<(typeof htmlElements)[number]["name"], string>;
+
+`.trim();
+
+  // ディレクトリがなければ作成
+  fs.mkdirSync(path.dirname(luckOutputPath), { recursive: true });
+
+  // 既にファイルがあればスキップ
+  // if (fs.existsSync(luckOutputPath)) {
+  //   console.log(`Skip: ${luckOutputPath}`);
+  // } else {
+  // ファイルを作成
+  fs.writeFileSync(luckOutputPath, luckContent);
+  console.log(`Create: ${luckOutputPath}`);
+  // }
 
   // ページを作成
   for (const element of elements) {
@@ -80,27 +129,6 @@ export default function Page() {
     // ファイルを作成
     fs.writeFileSync(pagePath, pageContent);
     console.log(`Create: ${pagePath}`);
-    // }
-
-    // 運勢コンポーネントを作成
-    const componentPath = path.resolve(componentsDir, element.name, `${element.name}-luck.tsx`);
-
-    const componentContent = `
-export const ${toPascalCase(element.name)}Luck = () => {
-  return <div>Luck</div>; // ${"TO" + "DO"}: 内容を書く
-};
-`.trim();
-
-    // ディレクトリがなければ作成
-    fs.mkdirSync(path.dirname(componentPath), { recursive: true });
-
-    // 既にファイルがあればスキップ
-    // if (fs.existsSync(componentPath)) {
-    //   console.log(`Skip: ${componentPath}`);
-    // } else {
-    // ファイルを作成
-    fs.writeFileSync(componentPath, componentContent);
-    console.log(`Create: ${componentPath}`);
     // }
 
     // 解説コンポーネントを作成
