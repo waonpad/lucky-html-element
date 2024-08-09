@@ -37,7 +37,7 @@ export const htmlElements = ${JSON.stringify(elements, null, 2)} as const satisf
 
   // ページを作成
   for (const element of elements) {
-    const pagePath = path.resolve(pagesDir, `${element.name}/page.tsx`);
+    const pagePath = path.resolve(pagesDir, `(html-elements)/${element.name}/page.tsx`);
 
     const pageContent = `
 import { Code } from "@/components/elements/code";
