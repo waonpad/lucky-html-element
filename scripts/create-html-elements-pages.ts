@@ -43,15 +43,16 @@ export const htmlElements = ${JSON.stringify(elements, null, 2)} as const satisf
 import { Code } from "@/components/elements/code";
 import { ContentContainer } from "@/components/elements/content-container";
 import { ContentTitle } from "@/components/elements/content-title";
+import { ElementInfo } from "@/components/elements/element-info";
 import { ${toPascalCase(element.name)}Explanation } from "@/components/elements/html-elements/${element.name}/${element.name}-explanation";
 import { PageContainer } from "@/components/layouts/page-container";
 import { findByElementName } from "@/config/html-elements/utils";
 import type { Metadata } from "next";
 
-const element = findByElementName("${element.name}");
+const elementInfo = findByElementName("${element.name}");
 
 export const metadata: Metadata = {
-  title: \`<\${element.name}>\`,
+  title: \`<\${elementInfo.name}>\`,
 };
 
 export default function Page() {
@@ -59,8 +60,9 @@ export default function Page() {
     <PageContainer>
       <ContentContainer>
         <ContentTitle>
-          <Code>{\`<\${element.name}>\`}</Code>
+          <Code>{\`<\${elementInfo.name}>\`}</Code>
         </ContentTitle>
+        <ElementInfo elementInfo={elementInfo} />
         <${toPascalCase(element.name)}Explanation />
       </ContentContainer>
     </PageContainer>
