@@ -3,10 +3,9 @@ import { ContentContainer } from "@/components/elements/content-container";
 import { ContentTitle } from "@/components/elements/content-title";
 import { ElementInfo } from "@/components/elements/element-info";
 import { PageContainer } from "@/components/layouts/page-container";
+import { luckMessages } from "@/config/html-elements/luck-messages";
 import { findByElementName } from "@/config/html-elements/utils";
-import { toPascalCase } from "@/utils";
 import type { Metadata } from "next";
-import type { JSX } from "react";
 
 export const metadata: Metadata = {
   alternates: {
@@ -25,9 +24,7 @@ export default async function Page() {
 
   const elementInfo = findByElementName(elementName);
 
-  const ElementLuck: () => JSX.Element = await import(
-    `@/components/elements/html-elements/${elementName}/${elementName}-luck`
-  ).then((module) => module[`${toPascalCase(elementName)}Luck`]);
+  const luckMessage = luckMessages[elementName];
 
   return (
     <PageContainer>
@@ -36,7 +33,7 @@ export default async function Page() {
           今日のラッキーHTML要素は <Code>{`<${elementName}>`}</Code> です！
         </ContentTitle>
         <ElementInfo elementInfo={elementInfo} />
-        <ElementLuck />
+        <p>{luckMessage}</p>
       </ContentContainer>
     </PageContainer>
   );
