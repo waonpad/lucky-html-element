@@ -11,11 +11,10 @@ const nextConfig = (phase, { defaultConfig }) => ({
   experimental: {
     typedRoutes: true,
   },
-  pageExtensions: ["ts", "tsx", "js", "jsx"]
-    .flatMap((extension) => {
-      const isDevServer = phase === PHASE_DEVELOPMENT_SERVER;
-      return isDevServer ? [`dev.${extension}`, extension] : extension;
-    }),
+  pageExtensions: ["ts", "tsx", "js", "jsx"].flatMap((extension) => {
+    const isDevServer = phase === PHASE_DEVELOPMENT_SERVER;
+    return isDevServer ? [`dev.${extension}`, extension] : extension;
+  }),
 });
 
 export default nextConfig;

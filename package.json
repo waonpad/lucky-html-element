@@ -13,7 +13,9 @@
     "che": "biome check --write .",
     "test": "vitest run",
     "test:watch": "vitest watch --silent",
-    "test:ci": "vitest run --silent"
+    "test:ci": "vitest run --silent",
+    "elm:json": "$npm_execpath run scripts/create-html-elements-json.ts",
+    "elm:pages": "$npm_execpath run scripts/create-html-elements-pages.ts && $npm_execpath run fmt"
   },
   "dependencies": {
     "@t3-oss/env-nextjs": "^0.11.0",
