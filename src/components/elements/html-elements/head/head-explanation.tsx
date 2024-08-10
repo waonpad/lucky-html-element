@@ -1,10 +1,11 @@
 import { ElementLinkCode } from "../../element-link-code";
+import { ExplanationContainer } from "../../explanation-container";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 import { ExternalLink } from "../../external-link";
 
 export const HeadExplanation = () => {
   return (
-    <div>
+    <ExplanationContainer>
       <ExplanationMemoContainer>
         <li>
           <p>ページのメタデータを入れる要素</p>
@@ -31,6 +32,6 @@ export const HeadExplanation = () => {
           </p>
         </li>
       </ExplanationMemoContainer>
-    </div>
+    </ExplanationContainer>
   );
 };

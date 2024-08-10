@@ -1,10 +1,11 @@
+import { ExplanationContainer } from "@/components/elements/explanation-container";
 import { ExplanationExampleContainer } from "../../explanation-example-container";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 import { ExternalLink } from "../../external-link";
 
 export const AddressExplanation = () => {
   return (
-    <div className="space-y-4">
+    <ExplanationContainer>
       <ExplanationMemoContainer>
         <li>
           <p>中身が個人、団体、組織の連絡先情報を提供する事を示す</p>
@@ -35,6 +36,6 @@ export const AddressExplanation = () => {
           },
         ]}
       />
-    </div>
+    </ExplanationContainer>
   );
 };

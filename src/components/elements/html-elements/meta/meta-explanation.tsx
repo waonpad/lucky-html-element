@@ -1,9 +1,10 @@
 import { Code } from "../../code";
+import { ExplanationContainer } from "../../explanation-container";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 
 export const MetaExplanation = () => {
   return (
-    <div>
+    <ExplanationContainer>
       <ExplanationMemoContainer>
         <li>
           <p>
@@ -12,6 +13,6 @@ export const MetaExplanation = () => {
           </p>
         </li>
       </ExplanationMemoContainer>
-    </div>
+    </ExplanationContainer>
   );
 };

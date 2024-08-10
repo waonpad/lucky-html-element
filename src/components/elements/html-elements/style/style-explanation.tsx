@@ -1,9 +1,10 @@
 import { ElementLinkCode } from "../../element-link-code";
+import { ExplanationContainer } from "../../explanation-container";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 
 export const StyleExplanation = () => {
   return (
-    <div>
+    <ExplanationContainer>
       <ExplanationMemoContainer>
         <li>
           <p>
@@ -18,6 +19,6 @@ export const StyleExplanation = () => {
           <p>複数の要素を配置し、詳細度が同じのものがあれば、後に書かれたものが優先される</p>
         </li>
       </ExplanationMemoContainer>
-    </div>
+    </ExplanationContainer>
   );
 };

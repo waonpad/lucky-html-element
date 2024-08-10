@@ -135,8 +135,14 @@ export default function Page() {
     const componentExplanationPath = path.resolve(componentsDir, element.name, `${element.name}-explanation.tsx`);
 
     const componentExplanationContent = `
+import { ExplanationContainer } from "@/components/elements/explanation-container";
+
 export const ${toPascalCase(element.name)}Explanation = () => {
-  return <div>Explanation</div>; // ${"TO" + "DO"}: 内容を書く
+  return (
+    <ExplanationContainer>
+      <div />
+    </ExplanationContainer>
+  );
 };
 `.trim();
 
@@ -144,13 +150,13 @@ export const ${toPascalCase(element.name)}Explanation = () => {
     fs.mkdirSync(path.dirname(componentExplanationPath), { recursive: true });
 
     // 既にファイルがあればスキップ
-    // if (fs.existsSync(componentExplanationPath)) {
-    //   console.log(`Skip: ${componentExplanationPath}`);
-    // } else {
-    // ファイルを作成
-    fs.writeFileSync(componentExplanationPath, componentExplanationContent);
-    console.log(`Create: ${componentExplanationPath}`);
-    // }
+    if (fs.existsSync(componentExplanationPath)) {
+      console.log(`Skip: ${componentExplanationPath}`);
+    } else {
+      // ファイルを作成
+      fs.writeFileSync(componentExplanationPath, componentExplanationContent);
+      console.log(`Create: ${componentExplanationPath}`);
+    }
   }
 };
 

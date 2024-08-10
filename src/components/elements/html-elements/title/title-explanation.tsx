@@ -1,9 +1,10 @@
 import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { ExplanationContainer } from "../../explanation-container";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 
 export const TitleExplanation = () => {
   return (
-    <div>
+    <ExplanationContainer>
       <ExplanationMemoContainer>
         <li>
           <p>
@@ -21,6 +22,6 @@ export const TitleExplanation = () => {
           <p>サイト内で固有のものにする</p>
         </li>
       </ExplanationMemoContainer>
-    </div>
+    </ExplanationContainer>
   );
 };
