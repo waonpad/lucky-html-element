@@ -86,7 +86,7 @@ export const luckMessages = ${JSON.stringify(sortedLuckContent, null, 2)} as con
 
   // ページを作成
   for (const element of elements) {
-    const pagePath = path.resolve(pagesDir, `(html-elements)/${element.name}/page.tsx`);
+    const pagePath = path.resolve(pagesDir, `html-elements/${element.name}/page.tsx`);
 
     const pageContent = `
 import { Code } from "@/components/elements/code";
