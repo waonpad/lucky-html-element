@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 // 動的レンダリングを強制する
 export const dynamic = "force-dynamic";
 
-export default async function Page() {
+export default function Page() {
   const elementNames = htmlElements.map((element) => element.name);
   const elementName = elementNames[Math.floor(Math.random() * elementNames.length)];
 

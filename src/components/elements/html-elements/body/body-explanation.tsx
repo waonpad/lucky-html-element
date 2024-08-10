@@ -1,3 +1,13 @@
+import { ExplanationMemoContainer } from "../../explanation-memo-container";
+
 export const BodyExplanation = () => {
-  return <div>Explanation</div>; // TODO: 内容を書く
+  return (
+    <div>
+      <ExplanationMemoContainer>
+        <li>
+          <p>文書内に1つだけしか置けない</p>
+        </li>
+      </ExplanationMemoContainer>
+    </div>
+  );
 };

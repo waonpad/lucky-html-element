@@ -1,9 +1,13 @@
-import type { ReactNode } from "react";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
-type Props = {
+type Props = ComponentPropsWithoutRef<"code"> & {
   children: ReactNode;
 };
 
-export const Code = ({ children }: Props) => {
-  return <code className="rounded-md bg-gray-200 p-1">{children}</code>;
+export const Code = ({ children, className = "", ...rest }: Props) => {
+  return (
+    <code {...rest} className={`rounded-md bg-gray-200 p-1 ${className}`}>
+      {children}
+    </code>
+  );
 };
