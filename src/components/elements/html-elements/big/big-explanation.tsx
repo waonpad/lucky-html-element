@@ -8,7 +8,7 @@ export const BigExplanation = () => {
       <ExplanationMemoContainer>
         <li>
           <p>
-            代わりに
+            代わりにCSSの
             <Code>font-size</Code>
             プロパティを使う
           </p>
