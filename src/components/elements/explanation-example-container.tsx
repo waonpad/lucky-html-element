@@ -17,7 +17,7 @@ export const ExplanationExampleContainer = ({ examples }: Props) => {
           // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
           <li key={index} className="space-y-2">
             <span>{example.title}</span>
-            <div className="flex items-center justify-center rounded-md border-2 border-slate-300 p-2">
+            <div className="flex flex-col items-center justify-center rounded-md border-2 border-slate-300 p-2">
               {example.element}
             </div>
             <RenderReactHTML element={example.element} />
