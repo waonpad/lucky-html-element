@@ -1,9 +1,9 @@
-import type { JSX } from "react";
+import type { JSX, ReactNode } from "react";
 import { RenderReactHTML } from "./render-react-html";
 
 type Props = {
   examples: {
-    title: string;
+    title: ReactNode;
     element: JSX.Element;
   }[];
 };
@@ -16,7 +16,7 @@ export const ExplanationExampleContainer = ({ examples }: Props) => {
         {examples.map((example, index) => (
           // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
           <li key={index} className="space-y-2">
-            <span>{example.title}</span>
+            <p>{example.title}</p>
             <div className="flex flex-col items-center justify-center rounded-md border-2 border-slate-300 p-2">
               {example.element}
             </div>
