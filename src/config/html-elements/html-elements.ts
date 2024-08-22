@@ -653,6 +653,18 @@ export const htmlElements = [
     experimental: false,
   },
   {
+    name: "svg",
+    url: "https://developer.mozilla.orgja/docs/Web/SVG/Element/svg",
+    deprecated: false,
+    experimental: false,
+  },
+  {
+    name: "math",
+    url: "https://developer.mozilla.orgja/docs/Web/MathML/Element/math",
+    deprecated: false,
+    experimental: false,
+  },
+  {
     name: "table",
     url: "https://developer.mozilla.org/ja/docs/Web/HTML/Element/table",
     deprecated: false,
