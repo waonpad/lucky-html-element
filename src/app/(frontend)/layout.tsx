@@ -1,5 +1,11 @@
+import { AppHeader } from "@/components/layouts/app-header";
 import type { ReactNode } from "react";
 
 export default function Layout({ children }: { children: ReactNode }) {
-  return <main className="min-h-screen">{children}</main>;
+  return (
+    <>
+      <AppHeader />
+      <main className="flex grow flex-col">{children}</main>
+    </>
+  );
 }
