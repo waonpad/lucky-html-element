@@ -26,7 +26,7 @@ export const ArticleExplanation = () => {
         <li>
           <p>
             <ElementLinkCode elementName="section" />
-            との違いは、 それが自己完結しているかどうかで考えればよさそう？
+            との違いは、それが自己完結しているかどうかで考えればよさそう？
           </p>
         </li>
       </ExplanationMemoContainer>
