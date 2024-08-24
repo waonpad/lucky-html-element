@@ -14,11 +14,6 @@ export const metadata: Metadata = {
   },
 };
 
-// テスト用に動的レンダリングを強制する
-// export const dynamic = "force-dynamic";
-
-export const revalidate = 86400;
-
 export default function Page() {
   const elementNames = htmlElements.map((element) => element.name);
   const elementName = elementNames[Math.floor(Math.random() * elementNames.length)];
