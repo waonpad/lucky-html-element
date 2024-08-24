@@ -1,5 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { Code } from "../../code";
 import { ElementLinkCode } from "../../element-link-code";
 import { ExplanationExampleContainer } from "../../explanation-example-container";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
@@ -28,7 +28,7 @@ export const BlockquoteExplanation = () => {
         </li>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="cite" noLink={true} />
+            <Code>cite</Code>
             属性はURLしか設定できないが、
             <ElementLinkCode elementName="cite" />
             要素はそれ以外も設定できる

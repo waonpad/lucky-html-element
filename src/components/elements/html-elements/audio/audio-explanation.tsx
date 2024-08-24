@@ -1,5 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { Code } from "../../code";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 
 export const AudioExplanation = () => {
@@ -11,7 +11,7 @@ export const AudioExplanation = () => {
         </li>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="src" noLink={true} />
+            <Code>src</Code>
             属性に音源のURLを指定
           </p>
         </li>

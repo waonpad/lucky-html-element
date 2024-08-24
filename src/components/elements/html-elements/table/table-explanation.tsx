@@ -1,5 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { Code } from "../../code";
 import { ElementLinkCode } from "../../element-link-code";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 
@@ -20,7 +20,7 @@ export const TableExplanation = () => {
           <p>
             <ElementLinkCode elementName="th" />
             には
-            <ElementAttrLinkCode attrName="scope" noLink={true} />
+            <Code>scope</Code>
             属性を指定するとどんな形になっているか分かりやすくなる
           </p>
         </li>

@@ -1,5 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { Code } from "../../code";
 import { ExplanationExampleContainer } from "../../explanation-example-container";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 
@@ -9,15 +9,13 @@ export const ImgExplanation = () => {
       <ExplanationMemoContainer>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="alt" noLink={true} />
+            <Code>alt</Code>
             属性はスクリーンリーダーで読み上げられたり、画像が読み込めない場合に代替テキストとして表示されるため忘れずに設定する
           </p>
         </li>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="width" noLink={true} />
-            と
-            <ElementAttrLinkCode attrName="height" noLink={true} />
+            <Code>width</Code>と<Code>height</Code>
             属性を設定することでレイアウトの崩れを防げる
           </p>
         </li>

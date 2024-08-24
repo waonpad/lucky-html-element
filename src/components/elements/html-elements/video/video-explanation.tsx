@@ -1,5 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { Code } from "../../code";
 import { ElementLinkCode } from "../../element-link-code";
 import { ExplanationExampleContainer } from "../../explanation-example-container";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
@@ -11,13 +11,13 @@ export const VideoExplanation = () => {
       <ExplanationMemoContainer>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="controls" noLink={true} />
+            <Code>controls</Code>
             属性を指定しないと、ビデオの再生や停止、音量調整などの操作ができない
           </p>
         </li>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="poster" noLink={true} />
+            <Code>poster</Code>
             属性を指定すると、再生が開始されるまでの間に表示される画像を指定できる
           </p>
         </li>

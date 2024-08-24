@@ -1,6 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
 import { Code } from "../../code";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
 import { ElementLinkCode } from "../../element-link-code";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 import { ExternalLink } from "../../external-link";
@@ -19,7 +18,7 @@ export const TrackExplanation = () => {
         </li>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="src" />
+            <Code>src</Code>
             属性に
             <Code>.vtt</Code>
             ファイルのパスを指定し、字幕等を指定する

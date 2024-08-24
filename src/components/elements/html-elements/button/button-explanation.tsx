@@ -1,6 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
 import { Code } from "../../code";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
 import { ExplanationExampleContainer } from "../../explanation-example-container";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 import { ExternalLink } from "../../external-link";
@@ -11,9 +10,9 @@ export const ButtonExplanation = () => {
       <ExplanationMemoContainer>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="popovertarget" noLink={true} />
+            <Code>popovertarget</Code>
             属性と
-            <ElementAttrLinkCode attrName="popovertargetaction" noLink={true} />
+            <Code>popovertargetaction</Code>
             を使用する事でHTMLだけでポップオーバーを実装できる
           </p>
         </li>

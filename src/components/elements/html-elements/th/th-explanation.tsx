@@ -1,5 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { Code } from "../../code";
 import { ElementLinkCode } from "../../element-link-code";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 
@@ -12,8 +12,7 @@ export const ThExplanation = () => {
         </li>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="colspan" />,
-            <ElementAttrLinkCode attrName="rowspan" />
+            <Code>colspan</Code>,<Code>rowspan</Code>
             属性でセルを結合できる
           </p>
         </li>
@@ -25,8 +24,7 @@ export const ThExplanation = () => {
         </li>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="scope" />,
-            <ElementAttrLinkCode attrName="headers" />
+            <Code>scope</Code>,<Code>headers</Code>
             属性を使って詳細な情報を記述できる
           </p>
         </li>

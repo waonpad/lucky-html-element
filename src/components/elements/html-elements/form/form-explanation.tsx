@@ -1,5 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { Code } from "../../code";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 import { ExternalLink } from "../../external-link";
 
@@ -9,7 +9,7 @@ export const FormExplanation = () => {
       <ExplanationMemoContainer>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="autocomplete" noLink={true} />
+            <Code>autocomplete</Code>
             属性で入力保管の有無を指定できる
           </p>
         </li>

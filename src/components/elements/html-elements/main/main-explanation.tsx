@@ -1,5 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { Code } from "../../code";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 
 export const MainExplanation = () => {
@@ -8,7 +8,7 @@ export const MainExplanation = () => {
       <ExplanationMemoContainer>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="hidden" noLink={true} />
+            <Code>hidden</Code>
             属性が指定されていない場合、ページ内で1つだけしか置けない
           </p>
         </li>

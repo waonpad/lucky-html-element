@@ -1,5 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { Code } from "../../code";
 import { ElementLinkCode } from "../../element-link-code";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 
@@ -21,9 +21,9 @@ export const InsExplanation = () => {
         </li>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="cite" noLink={true} />
+            <Code>cite</Code>
             属性や
-            <ElementAttrLinkCode attrName="datetime" noLink={true} />
+            <Code>datetime</Code>
             属性を使って詳細な情報を記述できる
           </p>
         </li>

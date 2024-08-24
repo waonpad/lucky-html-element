@@ -1,5 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { Code } from "../../code";
 import { ExplanationExampleContainer } from "../../explanation-example-container";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 
@@ -16,7 +16,7 @@ export const IframeExplanation = () => {
         <li>
           <p>
             アクセシビリティのため、
-            <ElementAttrLinkCode attrName="title" /> 属性を指定すると良い
+            <Code>title</Code>属性を指定すると良い
           </p>
         </li>
         <li>

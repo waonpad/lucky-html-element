@@ -1,4 +1,4 @@
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { Code } from "../../code";
 import { ExplanationContainer } from "../../explanation-container";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 
@@ -8,7 +8,7 @@ export const TitleExplanation = () => {
       <ExplanationMemoContainer>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="children" noLink={true} />
+            <Code>children</Code>
             にはテキストのみを含む事ができる
           </p>
         </li>

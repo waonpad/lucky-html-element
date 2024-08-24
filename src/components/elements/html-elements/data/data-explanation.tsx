@@ -1,12 +1,12 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { Code } from "../../code";
 
 export const DataExplanation = () => {
   return (
     <ExplanationContainer>
       <li>
         <p>
-          <ElementAttrLinkCode attrName="data-*" noLink={true} />
+          <Code>data-*</Code>
           属性を使えばいいのでは・・・？
         </p>
       </li>

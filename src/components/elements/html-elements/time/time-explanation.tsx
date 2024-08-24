@@ -1,5 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
+import { Code } from "../../code";
 import { ExplanationExampleContainer } from "../../explanation-example-container";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 import { ExternalLink } from "../../external-link";
@@ -30,7 +30,7 @@ export const TimeExplanation = () => {
         </li>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="datetime" noLink={true} />
+            <Code>datetime</Code>
             属性もしくは、要素のテキストの内容で有効なdatetime値を示す
           </p>
         </li>

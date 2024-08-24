@@ -1,6 +1,5 @@
 import { ExplanationContainer } from "@/components/elements/explanation-container";
 import { Code } from "../../code";
-import { ElementAttrLinkCode } from "../../element-attr-link-code";
 import { ExplanationMemoContainer } from "../../explanation-memo-container";
 
 export const H1Explanation = () => {
@@ -27,7 +26,7 @@ export const H1Explanation = () => {
         </li>
         <li>
           <p>
-            <ElementAttrLinkCode attrName="aria-labelledby" />
+            <Code>aria-labelledby</Code>
             とかいうのがあるらしい
           </p>
         </li>
