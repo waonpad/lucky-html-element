@@ -1,11 +1,11 @@
+import type { GET } from "@/app/api/lucky-html-element/route";
 import { Code } from "@/components/elements/code";
 import { ContentContainer } from "@/components/elements/content-container";
 import { ContentTitle } from "@/components/elements/content-title";
 import { ElementInfo } from "@/components/elements/element-info";
 import { PageContainer } from "@/components/layouts/page-container";
-import { htmlElements } from "@/config/html-elements/html-elements";
-import { luckMessages } from "@/config/html-elements/luck-messages";
-import { findByElementName } from "@/config/html-elements/utils";
+import { hostApi } from "@/config/url/host-api";
+import type { NextResponseType, PromiseType } from "@/types";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,20 +14,35 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Page() {
-  const elementNames = htmlElements.map((element) => element.name);
-  const elementName = elementNames[Math.floor(Math.random() * elementNames.length)];
+// ビルド時に自身のAPIを呼ぶ事ができないためSSRにする
+export const dynamic = "force-dynamic";
 
-  const elementInfo = findByElementName(elementName);
+const getLuckyHtmlElement = async () => {
+  const response = await fetch(hostApi("lucky-html-element"), {
+    // キャッシュする
+    cache: "force-cache",
+    next: {
+      tags: ["lucky-html-element"],
+    },
+  });
 
-  const luckMessage = luckMessages[elementName];
+  const data: NextResponseType<PromiseType<ReturnType<typeof GET>>> = await response.json();
+
+  return data;
+};
+
+export default async function Page() {
+  const { elementInfo, luckMessage, generatedAt } = await getLuckyHtmlElement();
 
   return (
     <PageContainer>
       <ContentContainer>
         <ContentTitle>
-          今日のラッキーHTML要素は <Code>{`<${elementName}>`}</Code> です！
+          今日のラッキーHTML要素は <Code>{`<${elementInfo.name}>`}</Code> です！
         </ContentTitle>
+        <time dateTime={generatedAt} className="hidden">
+          取得日時: {new Date(generatedAt).toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })}
+        </time>
         <p className="whitespace-pre-wrap">{luckMessage}</p>
         <ElementInfo elementInfo={elementInfo} displayElementLink={true} />
       </ContentContainer>
